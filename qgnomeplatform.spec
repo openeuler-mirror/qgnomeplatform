@@ -1,12 +1,12 @@
 Name:                qgnomeplatform
 Version:             0.5
-Release:             8
+Release:             9
 Summary:             The module provides Qt Theme aimed to accommodate Gnome settings
 License:             LGPLv2+
 URL:                 https://github.com/MartinBriza/QGnomePlatform
 Source0:             https://github.com/MartinBriza/QGnomePlatform/archive/%{version}/QGnomePlatform-%{version}.tar.gz
 BuildRequires:       pkgconfig(gio-2.0) pkgconfig(udev) pkgconfig(xkbcommon) gtk3-devel libinput-devel
-BuildRequires:       libXrender-devel qt5-qtbase-devel qt5-qtbase-static qt5-qtbase-private-devel git
+BuildRequires:       libXrender-devel qt5-qtbase-devel qt5-qtbase-static qt5-qtbase-private-devel
 Requires:            adwaita-qt5
 
 %description
@@ -15,7 +15,7 @@ GNOME settings.The utilize Qt applications without modify this them could use
 the them as well as possible.
 
 %prep
-%autosetup -n  QGnomePlatform-%{version} -p1 -S git
+%autosetup -n QGnomePlatform-%{version} -p1
 
 %build
 install -d %{_target_platform}
@@ -32,6 +32,9 @@ cd -
 %{_qt5_libdir}/qt5/plugins/platformthemes/libqgnomeplatform.so
 
 %changelog
+* Sat Jul 31 2021 chenyanpanHW <chenyanpan@huawei.com> - 0.5-9
+- DESC: delete -S git from %autosetup, and delete BuildRequires git
+
 * Mon May 31 2021 huanghaitao <huanghaitao8@huawei.com> - 0.5-8
 - Completing build dependencies to fix git commands missing error
 
