@@ -1,6 +1,6 @@
 Name:                qgnomeplatform
 Version:             0.5
-Release:             9
+Release:             10
 Summary:             The module provides Qt Theme aimed to accommodate Gnome settings
 License:             LGPLv2+
 URL:                 https://github.com/MartinBriza/QGnomePlatform
@@ -8,6 +8,7 @@ Source0:             https://github.com/MartinBriza/QGnomePlatform/archive/%{ver
 BuildRequires:       pkgconfig(gio-2.0) pkgconfig(udev) pkgconfig(xkbcommon) gtk3-devel libinput-devel
 BuildRequires:       libXrender-devel qt5-qtbase-devel qt5-qtbase-static qt5-qtbase-private-devel
 Requires:            adwaita-qt5
+Patch0:              fix-cxx.patch
 
 %description
 The Qt Platform Theme named QGnomePlatform which aimed to accomodate multies
@@ -32,6 +33,9 @@ cd -
 %{_qt5_libdir}/qt5/plugins/platformthemes/libqgnomeplatform.so
 
 %changelog
+* Thu Apr 27 2023 yoo <sunyuechi@iscas.ac.cn> - 0.5-10
+- Add support for specifying cxx
+
 * Sat Jul 31 2021 chenyanpanHW <chenyanpan@huawei.com> - 0.5-9
 - DESC: delete -S git from %autosetup, and delete BuildRequires git
 

@@ -1,0 +1,9 @@
+diff -u -r QGnomePlatform-0.5/qgnomeplatform.pro QGnomePlatform-0.5/qgnomeplatform.pro
+--- QGnomePlatform-0.5/qgnomeplatform.pro	2018-12-05 21:50:33.000000000 +0800
++++ QGnomePlatform-0.5/qgnomeplatform.pro	2023-04-26 21:58:25.000000000 +0800
+@@ -30,3 +30,5 @@
+            src/qgnomeplatformtheme.h \
+            src/gnomehintssettings.h \
+            src/qgtk3dialoghelpers.h
++
++QMAKE_CXX = $$system("echo ${CXX:-g++}")
